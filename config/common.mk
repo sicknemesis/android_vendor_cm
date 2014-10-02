@@ -1,6 +1,6 @@
 PRODUCT_BRAND ?= cyanogenmod
 
-SUPERUSER_EMBEDDED := true
+SUPERUSER_EMBEDDED := false
 SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
@@ -147,13 +147,7 @@ PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf \
-    CMWallpapers \
-    Apollo \
-    CMFileManager \
-    LockClock \
-    CMUpdater \
-    CMAccount \
-    CMHome
+    LockClock 
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -212,9 +206,7 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 
 PRODUCT_PACKAGES += \
     procmem \
-    procrank \
-    Superuser \
-    su
+    procrank
 
 # Terminal Emulator
 PRODUCT_COPY_FILES +=  \
@@ -248,7 +240,7 @@ endif
 
 # Filter out random types, so it'll reset to UNOFFICIAL
 ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(CM_BUILDTYPE)),)
-    CM_BUILDTYPE :=
+    CM_BUILDTYPE :=SICKI
 endif
 
 ifdef CM_BUILDTYPE
