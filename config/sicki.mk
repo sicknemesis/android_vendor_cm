@@ -50,7 +50,7 @@ endif
 
 ifndef GCC_VERSION_ARM
 # GCC_VERSION_ARM is not defined, set to 4.8 default
-GCC_VERSION_ARM := 4.8
+GCC_VERSION_ARM := 4.9
 SM_ARM_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(GCC_VERSION_ARM)
 SM_ARM := $(shell $(SM_ARM_PATH)/bin/arm-eabi-gcc --version)
 
